@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #030712;
+  color: #f3f4f6;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Selection */
+::selection {
+  background: #00FF87;
+  color: #030712;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00FF87;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #60EFFF;
+}
+
+/* Fonts */
+.font-mono {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+
+/* Cyber Grid Background */
+.cyber-grid {
+  background-image:
+    linear-gradient(rgba(0, 255, 135, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 135, 0.035) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Glow Effects */
+.neon-text {
+  text-shadow:
+    0 0 5px rgba(0, 255, 135, 0.4),
+    0 0 15px rgba(0, 255, 135, 0.2);
+}
+
+.neon-border {
+  box-shadow:
+    0 0 10px rgba(0, 255, 135, 0.08),
+    inset 0 0 10px rgba(0, 255, 135, 0.02);
+}
+
+/* Floating animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Fade Up */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+/* Pulse Glow */
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Blinking Cursor */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink::after {
+  content: "_";
+  margin-left: 3px;
+  color: #00FF87;
+  animation: blink 1s step-end infinite;
+}
+
+/* Smooth anchor positioning */
+section {
+  scroll-margin-top: 90px;
+}
+
+/* ========================================================= */
+/* SECTION TRANSITION */
+/* ========================================================= */
+
+section {
+  scroll-margin-top: 90px;
+  position: relative;
+}
+
+/* Smooth rendering */
+section {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
